@@ -16,11 +16,11 @@ Check out the complete code at [OptimizedCanvasWebAnimationInteractive.tsx](/src
 
 I didn't build the complex animation that have all features right away.
 
-Instead, first, I build the minimal version that have no interactive at all [CanvasWebAnimation.tsx](/src/components/CanvasWebAnimation.tsx). Next, I build a totally separate canvas that only have 5 points that allows you to drag it around and click it [CanvasInteractivePoint.tsx](/src/components/CanvasInteractivePoint.tsx).
+Instead, I build the minimal version that have no interactive at all at [CanvasWebAnimation.tsx](/src/components/CanvasWebAnimation.tsx). Next, I build a totally separate canvas that only have 5 points that allows you to drag it around and click it in [CanvasInteractivePoint.tsx](/src/components/CanvasInteractivePoint.tsx).
 
 Then, I merge them all together in [CanvasWebAnimationInteractive.tsx](/src/components/CanvasWebAnimationInteractive.tsx).
 
-After that, I tried my best to optimize it in [OptimizedCanvasWebAnimationInteractive.tsx](/src/components/OptimizedCanvasWebAnimationInteractive.tsx) that is my final version.
+After that, I tried my best to optimize it in [OptimizedCanvasWebAnimationInteractive.tsx](/src/components/OptimizedCanvasWebAnimationInteractive.tsx), and that is my final version.
 
 In case you need to copy my code and modify it to fit with your project, I hope that will help you navigate through all those nasty logic easier.
 
