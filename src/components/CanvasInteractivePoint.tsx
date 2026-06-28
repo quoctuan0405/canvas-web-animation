@@ -1,4 +1,4 @@
-import { createEffect, onCleanup, type VoidComponent } from "solid-js";
+import { createEffect, onCleanup, type VoidComponent } from 'solid-js';
 
 export const CanvasInteractivePoint: VoidComponent = () => {
   // Canvas stuff
@@ -19,7 +19,7 @@ export const CanvasInteractivePoint: VoidComponent = () => {
     cosAngle: number;
   };
 
-  let points: Point[] = [
+  const points: Point[] = [
     { x: 50, y: 50, velocity: 0, sinAngle: 0, cosAngle: 0 },
     { x: 250, y: 150, velocity: 0, sinAngle: 0, cosAngle: 0 },
     { x: 550, y: 150, velocity: 0, sinAngle: 0, cosAngle: 0 },
@@ -47,10 +47,10 @@ export const CanvasInteractivePoint: VoidComponent = () => {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     onCleanup(() => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     });
   });
 
@@ -95,12 +95,12 @@ export const CanvasInteractivePoint: VoidComponent = () => {
       }
     };
 
-    window.addEventListener("mousedown", allowMovePointAccordingToCursor, {
+    window.addEventListener('mousedown', allowMovePointAccordingToCursor, {
       passive: true,
     });
 
     onCleanup(() => {
-      window.removeEventListener("mousedown", allowMovePointAccordingToCursor);
+      window.removeEventListener('mousedown', allowMovePointAccordingToCursor);
     });
   });
 
@@ -109,17 +109,17 @@ export const CanvasInteractivePoint: VoidComponent = () => {
       pointAttachToCursorIndex = -1;
     };
 
-    window.addEventListener("mouseup", cancelMovePointAccordingToCursor, {
+    window.addEventListener('mouseup', cancelMovePointAccordingToCursor, {
       passive: true,
     });
 
     onCleanup(() => {
-      window.removeEventListener("mouseup", cancelMovePointAccordingToCursor);
+      window.removeEventListener('mouseup', cancelMovePointAccordingToCursor);
     });
   });
 
   // Draw
-  let isDrawing = true;
+  const isDrawing = true;
 
   const endAngle = Math.PI * 2;
 
@@ -166,7 +166,7 @@ export const CanvasInteractivePoint: VoidComponent = () => {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     if (!context) return;
     context.scale(dpr, dpr);
 

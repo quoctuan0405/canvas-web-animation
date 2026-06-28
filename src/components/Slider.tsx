@@ -5,7 +5,7 @@ import {
   Show,
   untrack,
   type VoidComponent,
-} from "solid-js";
+} from 'solid-js';
 
 type Props = {
   class?: string;
@@ -54,8 +54,8 @@ export const Slider: VoidComponent<Props> = (props) => {
     const handleMouseUp = () => {
       if (isMouseDown()) {
         setIsMouseDown(false);
-        document.body.style.userSelect = "auto";
-        document.body.style.cursor = "auto";
+        document.body.style.userSelect = 'auto';
+        document.body.style.cursor = 'auto';
       }
     };
 
@@ -77,12 +77,12 @@ export const Slider: VoidComponent<Props> = (props) => {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
 
     onCleanup(() => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
     });
   });
 
@@ -118,8 +118,8 @@ export const Slider: VoidComponent<Props> = (props) => {
             onMouseDown={(e) => {
               setIsMouseDown(true);
               lastMouseX = e.clientX;
-              document.body.style.userSelect = "none";
-              document.body.style.cursor = "pointer";
+              document.body.style.userSelect = 'none';
+              document.body.style.cursor = 'pointer';
             }}
           >
             <Show when={isMouseDown()}>
@@ -150,7 +150,7 @@ export const Slider: VoidComponent<Props> = (props) => {
             }
           }}
           onKeyDown={(e) => {
-            if (e.key === "ArrowUp") {
+            if (e.key === 'ArrowUp') {
               e.preventDefault();
               const intValue =
                 parseInt(e.currentTarget.value, 10) + (e.shiftKey ? 10 : 1);
@@ -159,7 +159,7 @@ export const Slider: VoidComponent<Props> = (props) => {
               }
             }
 
-            if (e.key === "ArrowDown") {
+            if (e.key === 'ArrowDown') {
               e.preventDefault();
               const intValue =
                 parseInt(e.currentTarget.value, 10) - (e.shiftKey ? 10 : 1);

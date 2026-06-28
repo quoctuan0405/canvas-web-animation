@@ -1,5 +1,5 @@
-import { createEffect, onCleanup, type VoidComponent } from "solid-js";
-import { generateRandomInt } from "../utils/randomInt";
+import { createEffect, onCleanup, type VoidComponent } from 'solid-js';
+import { generateRandomInt } from '../utils/randomInt';
 
 type Props = {
   class?: string;
@@ -25,9 +25,9 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
       }
     };
 
-    window.addEventListener("blur", pauseAnimation, { passive: true });
+    window.addEventListener('blur', pauseAnimation, { passive: true });
 
-    document.addEventListener("visibilitychange", pauseAnimation, {
+    document.addEventListener('visibilitychange', pauseAnimation, {
       passive: true,
     });
   });
@@ -40,9 +40,9 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
       }
     };
 
-    window.addEventListener("focus", resumeAnimation, { passive: true });
+    window.addEventListener('focus', resumeAnimation, { passive: true });
 
-    document.addEventListener("visibilitychange", resumeAnimation, {
+    document.addEventListener('visibilitychange', resumeAnimation, {
       passive: true,
     });
   });
@@ -99,10 +99,10 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     onCleanup(() => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     });
   });
 
@@ -147,12 +147,12 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
       }
     };
 
-    window.addEventListener("mousedown", allowMovePointAccordingToCursor, {
+    window.addEventListener('mousedown', allowMovePointAccordingToCursor, {
       passive: true,
     });
 
     onCleanup(() => {
-      window.removeEventListener("mousedown", allowMovePointAccordingToCursor);
+      window.removeEventListener('mousedown', allowMovePointAccordingToCursor);
     });
   });
 
@@ -161,12 +161,12 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
       pointAttachToCursorIndex = -1;
     };
 
-    window.addEventListener("mouseup", cancelMovePointAccordingToCursor, {
+    window.addEventListener('mouseup', cancelMovePointAccordingToCursor, {
       passive: true,
     });
 
     onCleanup(() => {
-      window.removeEventListener("mouseup", cancelMovePointAccordingToCursor);
+      window.removeEventListener('mouseup', cancelMovePointAccordingToCursor);
     });
   });
 
@@ -263,7 +263,7 @@ export const CanvasWebAnimationInteractive: VoidComponent<Props> = (props) => {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     if (!context) return;
     context.scale(dpr, dpr);
 

@@ -1,5 +1,5 @@
-import { createEffect, onCleanup, type VoidComponent } from "solid-js";
-import { generateRandomInt } from "../utils/randomInt";
+import { createEffect, onCleanup, type VoidComponent } from 'solid-js';
+import { generateRandomInt } from '../utils/randomInt';
 
 export const CanvasWebAnimation: VoidComponent = () => {
   let canvas!: HTMLCanvasElement;
@@ -20,9 +20,9 @@ export const CanvasWebAnimation: VoidComponent = () => {
       }
     };
 
-    window.addEventListener("blur", pauseAnimation, { passive: true });
+    window.addEventListener('blur', pauseAnimation, { passive: true });
 
-    document.addEventListener("visibilitychange", pauseAnimation, {
+    document.addEventListener('visibilitychange', pauseAnimation, {
       passive: true,
     });
   });
@@ -35,9 +35,9 @@ export const CanvasWebAnimation: VoidComponent = () => {
       }
     };
 
-    window.addEventListener("focus", resumeAnimation, { passive: true });
+    window.addEventListener('focus', resumeAnimation, { passive: true });
 
-    document.addEventListener("visibilitychange", resumeAnimation, {
+    document.addEventListener('visibilitychange', resumeAnimation, {
       passive: true,
     });
   });
@@ -52,7 +52,7 @@ export const CanvasWebAnimation: VoidComponent = () => {
     distanceToCursor: number;
   };
 
-  let points: Point[] = [];
+  const points: Point[] = [];
 
   const generatePoints = () => {
     for (let i = 0; i < 150; i++) {
@@ -95,12 +95,12 @@ export const CanvasWebAnimation: VoidComponent = () => {
       }
     };
 
-    window.addEventListener("mousemove", storeCursorPosition, {
+    window.addEventListener('mousemove', storeCursorPosition, {
       passive: true,
     });
 
     onCleanup(() => {
-      window.removeEventListener("mousemove", storeCursorPosition);
+      window.removeEventListener('mousemove', storeCursorPosition);
     });
   });
 
@@ -207,7 +207,7 @@ export const CanvasWebAnimation: VoidComponent = () => {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     if (!context) return;
     context.scale(dpr, dpr);
 
