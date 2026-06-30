@@ -1,4 +1,4 @@
-# Interactive Web Canvas Animation
+# [Interactive Web Canvas Animation](https://canvas-web-animation.vercel.app/)
 
 Inspired by https://vorpus.github.io/performativeUI/#/components/node-graph, I built an interactive web canvas animation.
 
@@ -9,6 +9,8 @@ Move your cursor across the web to make it glow, and click to send nearby points
 You can also drag individual points!
 
 You probably have seen this animation before (I've seen one in a VPN website in 2017!), but I bet you have not seen one that interactive :)
+
+You can play with it [here](https://canvas-web-animation.vercel.app/).
 
 ## See the code
 
